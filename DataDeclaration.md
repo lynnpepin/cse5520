@@ -10,5 +10,11 @@ I'd like to use the 5GB "OathKeepers" data breach, from https://ddosecrets.com/w
 
 Most of this is available via download, with extra requiring request for access.
 
+
 ## Option 2:  Describe the nature of data you would like to use and where such data could come from in 2-3 sentences.
 
+The [MusicNet dataset](https://www.kaggle.com/imsparsh/musicnet-dataset) is a 23GB dataset of classical music that can be downloaded from Kaggle, containing labels for instrument, composer, note-onset times, and musical notes.
+
+This is plenty interesting for analysis (e.g. fuzzy hashing for popular sounds), for exploration (finding music by different properties, or exploring a learned "latent space"), or for generation (e.g. by any of the various DNN methods available, or by classical methods). 
+
+In some cases, I might use a "pared down" version of the data, to make it more usable for a web-app that I host on my own laptop.
