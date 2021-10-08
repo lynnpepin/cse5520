@@ -85,3 +85,38 @@ def _fib2(nn: int) -> int:
             b = s
         
         return s
+
+def binsearch(func, vv = 0.025, x_l = -100, x_r = 100, eps=0.00001):
+    '''
+    Search for a float input xx such that func(xx) = vv,
+    where func(xx) increases as x does,
+    and where x_l <= xx <= x_r
+    
+    :param :
+    :type :
+    :param :
+    :type :
+    :param :
+    :type :
+    '''
+    v_l = func(x_l)
+    v_r = func(x_r)
+    
+    x_m = (x_l + x_r)/2
+    v_m = func(x_m)
+    
+    while abs(v_m - vv) >= eps:
+        if v_m < vv:
+            x_l = x_m
+        elif v_m > vv:
+            x_r = x_m
+        else:
+            print("weird, this shouldn't be possible")
+            return x_m
+            
+        v_l = func(x_l)
+        v_r = func(x_r)
+        x_m = (x_l + x_r)/2
+        v_m = func(x_m)
+    
+    return x_m
