@@ -120,3 +120,4 @@ def binsearch(func, vv = 0.025, x_l = -100, x_r = 100, eps=0.00001):
         v_m = func(x_m)
     
     return x_m
+
