@@ -11,5 +11,6 @@ Next:
 
 Finish:
     1. Rest of the components
-    2. Make it prettier
-    
+    2. Make things prettier
+    3. Put into tabs
+    4. Submit
