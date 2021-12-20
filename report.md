@@ -1,6 +1,10 @@
+---
+geometry: margin=1in
+fontsize: 12pt
+mainfont: 'Times-New-Roman.otf'
+---
 # Traffic Accident Visualization
 
-Title is bold, 24 point
 
 | | |
 |-|-|
@@ -8,25 +12,13 @@ Title is bold, 24 point
 | Author Name: | Lynn Pepin
 | Date:        | December the 19th, 2021
 
-Formatting notes:
-
-- Font is Times New Roman
-- Title is bold 24pt
-- 1" margin on all sides
-- 1 to 1.5 line spacing,
-- Total limit is 10 pages: 3 for text, 7 for screenshots.
-
-TODO: Figure this out with Pandoc.
-
-https://stackoverflow.com/questions/23811002/from-markdown-to-pdf-how-to-change-the-font-size-with-pandoc#23813475
-
-TODO: Figure out markdown paste images in Gedit
-
----
+\newpage
 
 # Introduction
 
 > 1 page. What is your project about? What are you trying to communicate by publishing your Dashboard? What data analytics visualization are you offering?
+>
+> ---
 
 > **In short:** This is a project about traffic accidents in the United States. The purpose is to provide an enviornment for data-exploration. This dashboard provides several visualizations helping people view the distribution of traffic accidents, and how the severity and location of accidents differ by common traffic controls (such as stop signs or crossings) and by weather conditions (such as temperature or visibility.)
 
@@ -43,14 +35,13 @@ This dashboard offers dashboards to visualize the distribution of accidents by t
 There are two modals included to allow the user to make concrete conclusions: Hypothesis testing and regression studio. The hypothesis testing allows users to determine whether certain traffic control measures provide a statistically significant difference on the severity and distance of collisions. The regression studio allows users to determine if there is a meaningful correlation between any two key variables, as well as perform polynomial regression against these two variables. The regression studio also provides the Pearson correlation coefficient. This allows the user to quantify suspected correlations and visualize them easily.
 
 
-
 \newpage
-
----
 
 # Dataset Description 
 
 > 0.5 pages. What are the specifics of data sets you are using? What real world (public/private) data or artificial (fake) data are you using? What are the reasons you choose them?
+>
+> ---
 
 > In short: This is a spreadsheet containing information about 1.5 million accidents over 4 years in the US. I used only this one real-world dataset. I chose this because I think it is important to help visualize and communicate one part of the large negative impact vehicles play in our life.
 
@@ -62,11 +53,13 @@ I chose this dataset because the issue is important to me. In the United States,
 
 Even ignoring the pressing climate issues, I have very deeply-held concerns regarding the vehicle culture in the United States. I could not find datasets specifically about costs, injuries, deaths, and secondary effects of traffic accidents, so I chose this dataset.
 
----
+\newpage
 
 # System Functionality
 
 > 1.5 pages. What specific data visualization does your website offer? In writing, make references to figures with proper numbers that you will include in Section 4. In your writing, make sure you include what “data analytics” your Dashboard addresses with plots/graphs? You are not showing the graphs and plots for the sake of pretty figures. What are the analytic (computation) goals behind the figures?
+>
+> ---
 
 This project offers six main, key modules. I'll describe each.
 
@@ -102,29 +95,62 @@ This part gives the users hard quantitative tools just like in Part 3. This part
 
 In addition to this, the regression is polynomial. The user can choose linear, quadratic, cubic, or higher polynomial regression, to explore more complex relationships in the data. The full polynomial is plotted (albeit with rounded coefficients.) 
 
-
----
+\newpage
 
 # Screenshot Attachment
 
-7 pages max.
-
+> 7 pages max.
+> 
 You can include multiple pages of screenshots as needed up to 7 pages. Each screenshot should have a figure number (e.g., Figure 1, Figure 2, etc.) and each should have a short annotation explaining what the plot/graph is about (i.e., Figure caption). The figure numbers should be referred to in the body of the paper as needed.
+>
+> ---
 
-
----
+\newpage
 
 # Accomplishment Summary 
 
-Use the 1 page Excel sheet.
+> Use the 1 page Excel sheet.
+> 
+> ---
 
----
+|Categories|Visualization Methods|Basic|Medium|Intensive|
+|-|-|-|-|-|
+|Clustering:|Hierarchical|X|||
+||K-means|X|||
+||||||
+|Classification:|Gaussian mixed model|X|||
+||||||
+|Network Analysis:|Network Visualization|X|||N/A
+||||||
+|Correlation Analysis:|Linear regression |||X|
+||Pearson correlation|||X|
+||Kernel Density Estimate|||X|
+||||||
+|Hypothesis Testing:|t-test||X||
+||p-value||X||
+||||||
+|Statistics:|Boxplots|||X|
+||Violin plots|||X|
+||Histogram|||X|
+||||||
+|Geospatial Analysis:|Cartogram map||X||
+||||||
+|NLP/Text Mining:|WordCloud|X|||
+||Barplot|X|||N/A
+|Basics:|Line graphs|||X|
+||||||
+|Other:|||||
 
+Notes: Hierarchical and K-means clustering were skipped for being redundant with GMM and computationally unnecessary. The linear-regression, t-test, p-value, and hypothesis testing categories include combinations of variables due to the interactive nature. The NLP section is not applicable, and the line-graphs are enhanced as part of the regression studio. 
+
+\newpage
 
 # Extension summary
 
 > 0.5 pages. You can summarize any “substantial” development effort since your presentation if you
 have done so
+> 
+> ---
 
 This is not a summary of included features, but a description of what I would add if I spent more time on this.
 
