@@ -1,0 +1,93 @@
+{
+  "main": {
+    "id": "dd5f946b172080bb",
+    "type": "split",
+    "children": [
+      {
+        "id": "fed186b59d1ed7be",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "report.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "de97f792c66a086c",
+    "type": "split",
+    "children": [
+      {
+        "id": "ffae27c4b31b0346",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "45ddc43b09c83a49",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "597c008aeba31672",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "5e806a7481a371da",
+    "type": "split",
+    "children": [
+      {
+        "id": "68210700abd5d706",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5d68c1525f5c510c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "report.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "fed186b59d1ed7be",
+  "lastOpenFiles": [
+    "report.md"
+  ]
+}

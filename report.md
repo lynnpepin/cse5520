@@ -72,20 +72,35 @@ This project offers six main, key modules. I'll describe each.
 
 ## Part 1: Box/violin plots.
 
-This module provides box and violin plots allowing the users to estimate how the 'Distance' of an accident (as measured in miles-of-road-impacted) differs according to different traffic controls (such as stop signs, traffic calming techniques, etc.)
+This module provides box and violin plots allowing the users to estimate how the 'Distance' of an accident (as measured in miles-of-road-impacted) differs according to different traffic controls (such as stop signs, traffic calming techniques, etc.) The X-axis has "false" or "true" (for the presence of the control) while the Y-axis measures the distance impacted.
 
-The X-axis has "false" or "true" (for the presence of the control) while the Y-axis measures the distance impacted.
+## Part 2: Histogram and KDE
 
+This module provides a histogram-plus-KDE plot (with margin visualization) of the distribution of weather conditions during traffic accidents. Users can set different bin-sizes. For example, one might use this module to see the distribution of visibility during traffic accidents. Most accidents happen at 10-mile visibility (the max, and the norm), but there is a notable bump in the KDE (and histogram) around the 0.0 mile mark.
 
+## Part 3: Hypothesis testing
 
-This project is lacking in several key aspects. For starters, only 10 thousand of the 1.5 million points are provided, and if I had the time and knowledge, I would "pre-bake" the visualizations of each module.
+This module performs hypothesis testing. It plots the t-distribution of the two populations, as well as accompanyinh box-plot and p-score. The magic of this module is that it is modular: The user can specific one of four different independent variables (traffic accidents with or without stop signs, with or without crossings, with or without calming, and those with or without traffic signals) against one of two independent variables (distance or severity).
 
-This dashboard is lacking due to time constraints I faced this semester. In particular, this dashboard does not provide exploration for temporal data, and does not provide tools to help users contextualize accidents across other variables. For example, the traffic accident map might as well be a population density map. A more polished dashboard would process this into accidents-per-100K-people.
+Effectively, this visualizes, tests, and answers eight hypotheses.
 
-things that would improve:
-1. include climate
-2. compare across the world
-3. compare with public transport
+## Part 4: Accidents map
+
+This modal plots accidents on a map according to specific subsets. That is to say, it allows users to plot traffic stops with certain severity levels and certain traffic controls. This effectively ties-back to the first module, but now allowing users to physically and tangibly *see* where accidents happen.
+
+## Part 5: Clustering accidents
+
+To be honest, this part I included just to fulfill the rubrik, and because it is a bit pretty. However, there is significant technical depth for the *presentation* of coloring. A relevant stackexchange is here: https://gamedev.stackexchange.com/questions/46463/how-can-i-find-an-optimum-set-of-colors-for-10-players
+
+We found $k=12$ to be a reasonable and optimal number of clusters during our homework. Choosing colors for an arbitrary number of $k$ points is difficult. The most reasonable choice is to generate colors where, for arbitrary and small $k$, the hues will be reasonably evenly distributed across the circle. This is accomplished using the equidistribution theorem with a modulus of the golden ratio (i.e., 1.618034.)
+
+Unfortunately, plotly provides only HSV colorspace and not HSL or more modern color-spaces, so the perceptual brightness varies across hues on most monitors (peaking at green.) Implementing code for alternative color-spaces would be too much work for this project, as would wrangling color-calibration in sRGB across everyones monitors.)
+
+## Part 6: Regression studio
+
+This part gives the users hard quantitative tools just like in Part 3. This part is the most complex and so it is saved for last, for when users are more experienced with the data. The regression studio prompts users to pick an X axis variable (such as precipitation) and a Y axis variable (such as severity of an accident) for regression. The graph outputs a regression between these two variables, printing out the plotting formula and the Pearson correlation coefficient.
+
+In addition to this, the regression is polynomial. The user can choose linear, quadratic, cubic, or higher polynomial regression, to explore more complex relationships in the data. The full polynomial is plotted (albeit with rounded coefficients.) 
 
 
 ---
@@ -103,4 +118,21 @@ You can include multiple pages of screenshots as needed up to 7 pages. Each scre
 
 Use the 1 page Excel sheet.
 
+---
+
+
+# Extension summary
+
+> 0.5 pages. You can summarize any “substantial” development effort since your presentation if you
+have done so
+
+This is not a summary of included features, but a description of what I would add if I spent more time on this.
+
+This dashboard is lacking due to time constraints I faced this semester. In particular, this dashboard does not provide exploration for temporal data, and does not provide tools to help users contextualize accidents across other variables. For example, the traffic accident map might as well be a population density map. A more polished dashboard would process this into accidents-per-100K-people.
+
+Furthermore, only 10 thousand of the 1.5 million points are provided, and if I had the time and knowledge, I would "pre-bake" the visualizations of each module. Good visualization includes relative priors that help further contextualize these accidents. For example, an accident-per-population cartogram would be much more meaningful than an accident map.
+
+Finally, this project should be expanded to include relative climate data, and perhaps visualizations relating to the prevalence and opportunity for public transport. This would establish a meaningfu narrative of "problem-problem-solution".
+
+And, on a technical note, I would explore more-efficient WSGI servers for deployment (on my personal site), or even more-efficienct server alternatives to Dash (such as Rust Plotters).
 
