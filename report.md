@@ -10,7 +10,8 @@ mainfont: 'Times-New-Roman.otf'
 |-|-|
 | Course | CSE 5520 Fall 2021, Data Visualization of Communication
 | Author Name: | Lynn Pepin
-| Date:        | December the 19th, 2021
+| Date:        | December 19th, 2021
+
 
 \newpage
 
@@ -43,7 +44,7 @@ There are two modals included to allow the user to make concrete conclusions: Hy
 >
 > ---
 
-> In short: This is a spreadsheet containing information about 1.5 million accidents over 4 years in the US. I used only this one real-world dataset. I chose this because I think it is important to help visualize and communicate one part of the large negative impact vehicles play in our life.
+> **In short:** This is a spreadsheet containing information about 1.5 million accidents over 4 years in the US. I used only this one real-world dataset. I chose this because I think it is important to help visualize and communicate one part of the large negative impact vehicles play in our life.
 
 The dataset is ["US Accidents (updated)" by Sobhan Moosavi on Kaggle, described as "A Countrywide Traffic Accident Dataset (2016 - 2020)".](https://www.kaggle.com/sobhanmoosavi/us-accidents)
 
@@ -65,25 +66,27 @@ This project offers six main, key modules. I'll describe each.
 
 ## Part 1: Box/violin plots.
 
-This module provides box and violin plots allowing the users to estimate how the 'Distance' of an accident (as measured in miles-of-road-impacted) differs according to different traffic controls (such as stop signs, traffic calming techniques, etc.) The X-axis has "false" or "true" (for the presence of the control) while the Y-axis measures the distance impacted.
+This module provides box and violin plots allowing the users to estimate how the 'Distance' of an accident (as measured in miles-of-road-impacted) differs according to different traffic controls (such as stop signs, traffic calming techniques, etc.) The X-axis has "false" or "true" (for the presence of the control) while the Y-axis measures the distance impacted. See Figure \ref{fig:part1} in the Screenshots section.
 
 ## Part 2: Histogram and KDE
 
-This module provides a histogram-plus-KDE plot (with margin visualization) of the distribution of weather conditions during traffic accidents. Users can set different bin-sizes. For example, one might use this module to see the distribution of visibility during traffic accidents. Most accidents happen at 10-mile visibility (the max, and the norm), but there is a notable bump in the KDE (and histogram) around the 0.0 mile mark.
+This module provides a histogram-plus-KDE plot (with margin visualization) of the distribution of weather conditions during traffic accidents. Users can set different bin-sizes. For example, one might use this module to see the distribution of visibility during traffic accidents. Most accidents happen at 10-mile visibility (the max, and the norm), but there is a notable bump in the KDE (and histogram) around the 0.0 mile mark. See Figure  \ref{fig:part2} in the Screenshots section.
 
 ## Part 3: Hypothesis testing
 
 This module performs hypothesis testing. It plots the t-distribution of the two populations, as well as accompanyinh box-plot and p-score. The magic of this module is that it is modular: The user can specific one of four different independent variables (traffic accidents with or without stop signs, with or without crossings, with or without calming, and those with or without traffic signals) against one of two independent variables (distance or severity).
 
-Effectively, this visualizes, tests, and answers eight hypotheses.
+Effectively, this visualizes, tests, and answers eight hypotheses. See Figure  \ref{fig:part3} in the Screenshots section.
 
 ## Part 4: Accidents map
 
-This modal plots accidents on a map according to specific subsets. That is to say, it allows users to plot traffic stops with certain severity levels and certain traffic controls. This effectively ties-back to the first module, but now allowing users to physically and tangibly *see* where accidents happen.
+This modal plots accidents on a map according to specific subsets. That is to say, it allows users to plot traffic stops with certain severity levels and certain traffic controls. This effectively ties-back to the first module, but now allowing users to physically and tangibly *see* where accidents happen. See Figure  \ref{fig:part4} in the Screenshots section.
 
 ## Part 5: Clustering accidents
 
-To be honest, this part I included just to fulfill the rubrik, and because it is a bit pretty. However, there is significant technical depth for the *presentation* of coloring. A relevant stackexchange is here: https://gamedev.stackexchange.com/questions/46463/how-can-i-find-an-optimum-set-of-colors-for-10-players
+To be honest, this part I included just to fulfill the rubrik, and because it is a bit pretty. See Figure  \ref{fig:part5} in the Screenshots section.
+
+However, there is significant technical depth for the *presentation* of coloring. A relevant stackexchange is here: https://gamedev.stackexchange.com/questions/46463/how-can-i-find-an-optimum-set-of-colors-for-10-players
 
 We found $k=12$ to be a reasonable and optimal number of clusters during our homework. Choosing colors for an arbitrary number of $k$ points is difficult. The most reasonable choice is to generate colors where, for arbitrary and small $k$, the hues will be reasonably evenly distributed across the circle. This is accomplished using the equidistribution theorem with a modulus of the golden ratio (i.e., 1.618034.)
 
@@ -93,7 +96,7 @@ Unfortunately, plotly provides only HSV colorspace and not HSL or more modern co
 
 This part gives the users hard quantitative tools just like in Part 3. This part is the most complex and so it is saved for last, for when users are more experienced with the data. The regression studio prompts users to pick an X axis variable (such as precipitation) and a Y axis variable (such as severity of an accident) for regression. The graph outputs a regression between these two variables, printing out the plotting formula and the Pearson correlation coefficient.
 
-In addition to this, the regression is polynomial. The user can choose linear, quadratic, cubic, or higher polynomial regression, to explore more complex relationships in the data. The full polynomial is plotted (albeit with rounded coefficients.) 
+In addition to this, the regression is polynomial. The user can choose linear, quadratic, cubic, or higher polynomial regression, to explore more complex relationships in the data. The full polynomial is plotted (albeit with rounded coefficients.) See Figure \ref{fig:part6} in the Screenshots section.
 
 \newpage
 
@@ -104,6 +107,22 @@ In addition to this, the regression is polynomial. The user can choose linear, q
 You can include multiple pages of screenshots as needed up to 7 pages. Each screenshot should have a figure number (e.g., Figure 1, Figure 2, etc.) and each should have a short annotation explaining what the plot/graph is about (i.e., Figure caption). The figure numbers should be referred to in the body of the paper as needed.
 >
 > ---
+
+
+![The landing page, including a demo video, tabs to navigate to different parts, and description text](Pasted image 20211219221555.png){#fig:video}
+
+![The first module, with the boxplot / histogram allowing users to explore the distribution of accidents and how that varies with traffic controls](Pasted image 20211219221642.png){#fig:part1}
+
+![The second module, showing the histogram and KDEs of both temperature and humidity plotted together, over their incidence in accidents. A binsize of 1 is chosen.](Pasted image 20211219222216.png){#fig:part2}
+
+![The third module, showing one combination of hypothesis testing: Is there a significant difference in the distance of road impacted  by an accident when they occur at a traffic stop versus when they occur elsewhere? Per the visualized distribution and the printed p-score, the answer is yes.](Pasted image 20211219222312.png){#fig:part3}
+
+![The fourth module, showing a plot of the most severe accidents, unconditioned on traffic control](Pasted image 20211219222430.png){#fig:part4}
+
+![The fifth module, showing a k=12 clustering of all accidents on the map, using hues chosen via optimal equidistribution using Fibonacci modulus](Pasted image 20211219222516.png){#fig:part5}
+
+![The sixth and final module, allowing users to perform arbitrary polynomial regression on any two axes of the data, with any choice of polynomial power from 1 to 5. The regression coefficients and the Pearson correlation coefficient are printed.](Pasted image 20211219222627.png){#fig:part6}
+
 
 \newpage
 
